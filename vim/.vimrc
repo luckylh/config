@@ -1,16 +1,14 @@
-
 set nocompatible
 
 """"""""""""""""""""""""""""
 " 插件
 """"""""""""""""""""""""""""
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim     " set the runtime path to include Vundle and initialize
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'            " let Vundle manage Vundle, required
-Plugin 'tpope/vim-fugitive'           " git
-Plugin 'scrooloose/nerdtree'          " file browser
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'tomasr/molokai'
+call plug#end()
 
 """"""""""""""""""""""""""""
 " 基础配置
@@ -49,7 +47,7 @@ set showmode                    " Display the current mode
 set cursorline                  " Highlight current line
 set backspace=indent,eol,start  " Backspace for dummies
 set linespace=0                 " No extra spaces between rows
-set number                      " Line numbers on
+set relativenumber                      " Line numbers on
 set showmatch                   " Show matching brackets/parenthesis
 set incsearch                   " Find as you type search
 set hlsearch                    " Highlight search terms
@@ -81,5 +79,4 @@ if has('statusline')
 
 endif
 
-colorscheme desert
-set guifont=Courier\ New:h12
+colorscheme molokai
